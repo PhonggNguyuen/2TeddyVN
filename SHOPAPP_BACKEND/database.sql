@@ -64,6 +64,14 @@ CREATE TABLE products (
     category_id INT,
     FOREIGN KEY (category_id) REFERENCES categories (id)
 );
+CREATE TABLE product_images (
+id INT PRIMARY KEY AUTO_INCREMENT,
+product_id INT,
+image_url Varchar(300) , 
+FOREIGN KEY (product_id) REFERENCES products(id),
+CONSTRAINT fk_product_images_product_id FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE
+    
+);
 CREATE TABLE orders (
     id INT PRIMARY KEY AUTO_INCREMENT,
     user_id INT,
