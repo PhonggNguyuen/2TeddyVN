@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/v1/categories")
+@RequestMapping("${api.prefix}/categories")
 public class CategoryController {
     //Hiện thi tất cả categoey
     @GetMapping("") //http://localhost:8088/api/v1/categories

@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 @RestController
-@RequestMapping("api/v1/products")
+@RequestMapping("${api.prefix}/products")
 public class ProductController {
     @GetMapping("") //http://localhost:8088/api/v1/products
     public ResponseEntity<String> getProducts(@RequestParam("page") int page , @RequestParam("limit") int limit){

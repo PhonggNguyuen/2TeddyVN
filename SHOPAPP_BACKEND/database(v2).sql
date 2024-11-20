@@ -1,5 +1,5 @@
-CREATE DATABASE shopapp;
-USE shopapp;
+CREATE DATABASE teddy;
+USE teddy;
 
 -- Khách hàng khi muốn mua hàng => phải đăng ký tài khoản => bảng users
 CREATE TABLE users (
@@ -108,7 +108,72 @@ CREATE TABLE order_details (
     color VARCHAR(20) DEFAULT ''
 );
 
+CREATE TABLE product_reviews (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    product_id INT NOT NULL, -- Mã sản phẩm (Foreign Key)
+    user_id INT NOT NULL, -- Mã người dùng (Foreign Key)
+    review TEXT NOT NULL, -- Nội dung đánh giá
+    rating INT NOT NULL CHECK (rating >= 1 AND rating <= 5), -- Đánh giá sao
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP, -- Thời gian đánh giá
+    FOREIGN KEY (product_id) REFERENCES products(id),
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+CREATE TABLE variantproduct (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    color TEXT NOT NULL, -- Màu sắc
+    size TEXT NOT NULL, -- Kích cỡ
+    quantity BIGINT NOT NULL, -- Số lượng
+    productId INT NOT NULL, -- Mã id sản phẩm (Foreign Key)
+    FOREIGN KEY (productId) REFERENCES products(id)
+);
+-- 1.1.14. Bảng statusorder (Trạng thái đơn hàng)
+CREATE TABLE statusorder (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    display CHAR(255) NOT NULL
+    );
 
+CREATE TABLE promotions (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    code VARCHAR(50) NOT NULL, -- Mã khuyến mãi
+    description TEXT, -- Mô tả chi tiết
+    discount_percentage FLOAT NOT NULL CHECK (discount_percentage > 0 AND discount_percentage <= 100), -- Tỷ lệ giảm giá
+    start_date DATETIME, -- Ngày bắt đầu khuyến mãi
+    end_date DATETIME, -- Ngày kết thúc khuyến mãi
+    is_active TINYINT(1) DEFAULT 1 -- Trạng thái khuyến mãi (1 là hoạt động)
+);
+ALTER TABLE orders ADD COLUMN promotion_id INT;
+ALTER TABLE orders ADD FOREIGN KEY (promotion_id) REFERENCES promotions(id);
+CREATE TABLE cart_items (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT,
+    product_id INT,
+    quantity INT CHECK (quantity > 0),
+    added_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id),
+    FOREIGN KEY (product_id) REFERENCES products(id)
+);
+ALTER TABLE product_reviews
+ADD FOREIGN KEY (user_id) 
+REFERENCES users(id) ON DELETE CASCADE;
+
+ALTER TABLE product_reviews
+ADD FOREIGN KEY (product_id) 
+REFERENCES products(id) ON DELETE CASCADE;
+
+ALTER TABLE cart_items
+ADD FOREIGN KEY (user_id) 
+REFERENCES users(id) ON DELETE CASCADE;
+
+ALTER TABLE cart_items
+ADD FOREIGN KEY (product_id) 
+REFERENCES products(id) ON DELETE CASCADE;
+ALTER TABLE orders
+ADD COLUMN status_order_id INT;
+ALTER TABLE orders
+ADD FOREIGN KEY (status_order_id) REFERENCES statusorder(id);
+ALTER TABLE variantproduct
+ADD CONSTRAINT fk_variantproduct_productId
+FOREIGN KEY (productId) REFERENCES products(id) ON DELETE CASCADE;
 
 
 
