@@ -8,5 +8,5 @@ import org.springframework.data.domain.*;
 @Repository
 public interface ProductRepository extends JpaRepository<Product , Long> {
     boolean existsByName (String name);
-    Page<Product> findALl(Pageable pageable);  // phân trang
+    Page<Product> findAll(Pageable pageable);  // phân trang
 }

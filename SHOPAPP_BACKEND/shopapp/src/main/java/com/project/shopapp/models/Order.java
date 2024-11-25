@@ -11,6 +11,7 @@ import java.util.Date;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,8 +38,7 @@ public class Order {
 
     @Column(name = "order_date")
     private LocalDateTime orderDate;
-    @ManyToOne
-    @JoinColumn(name = "status_order_id", nullable = false)
+    @Enumerated(EnumType.STRING)
     private StatusOrder statusOrder;
     @Column(name = "total_money")
     private Integer totalMoney;
