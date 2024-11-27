@@ -1,0 +1,161 @@
+/* Container chính */
+.order-container {
+    padding: 40px;
+    background-color: #f8f9fa;
+}
+
+/* Tiêu đề */
+.section-header {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Form thông tin người nhận */
+.form-control {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.form-label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+/* Bảng sản phẩm */
+.order-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.order-table th,
+.order-table td {
+    padding: 15px;
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+}
+
+.order-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    color: #333;
+}
+
+.order-table tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+.order-table tr:hover {
+    background-color: #eaf4ff;
+}
+
+.product-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.product-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.product-name {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Tổng giá */
+.summary {
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+.summary-total {
+    font-size: 20px; /* Làm chữ to hơn */
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px;
+    text-align: right; /* Căn chữ sang phải */
+}
+
+.total-value {
+    color: #007bff; /* Màu xanh nổi bật */
+    font-weight: bold;
+    font-size: 22px; /* Làm số tổng giá nổi bật hơn */
+}
+
+/* Nhập voucher */
+.voucher-section {
+    margin-top: 20px;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+}
+
+.input-group .form-control {
+    flex: 1;
+    border-radius: 5px;
+}
+
+.btn-gradient {
+    padding: 10px 20px;
+    background: linear-gradient(to right, #007bff, #0056b3);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-gradient:hover {
+    background: linear-gradient(to right, #0056b3, #007bff);
+}
+
+/* Nút đặt hàng */
+.btn-submit-order {
+    width: 100%;
+    font-size: 16px;
+    margin-top: 20px;
+    font-weight: bold;
+    padding: 10px;
+    background: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-submit-order:hover {
+    background: #218838;
+    transform: translateY(-2px);
+}
