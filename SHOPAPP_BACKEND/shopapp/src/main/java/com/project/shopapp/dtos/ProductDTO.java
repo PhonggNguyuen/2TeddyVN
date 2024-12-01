@@ -15,6 +15,7 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class ProductDTO {
     @NotEmpty(message = "Product's name can not be empty")
     @Size(min = 3 , max = 200 , message = "Title must be between 3 and 200 characters")
@@ -26,5 +27,4 @@ public class ProductDTO {
     private String description;
     @JsonProperty("category_id")
     private Long categoryId;
-    List<MultipartFile> files;
 }

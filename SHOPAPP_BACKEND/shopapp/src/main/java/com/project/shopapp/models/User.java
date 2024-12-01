@@ -6,7 +6,7 @@ import lombok.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "product_images")
+@Table(name = "users")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -29,6 +29,7 @@ public class User extends UtilsEntity{
     @Column(name = "password", length = 200)
     private String password;
 
+    @Column(name = "is_active")
     private boolean active;
 
     @Column(name = "date_of_birth")

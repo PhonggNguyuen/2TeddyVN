@@ -8,8 +8,10 @@ import com.project.shopapp.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.dao.DataIntegrityViolationException;
 import  com.project.shopapp.exceptions.DataNotFoundException;
+import org.springframework.stereotype.Service;
 
 @RequiredArgsConstructor
+@Service
 public class UserService implements IUserService{
 
     private UserRepository userRepository;

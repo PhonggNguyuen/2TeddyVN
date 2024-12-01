@@ -2,6 +2,7 @@ package com.project.shopapp.models;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
 
@@ -37,8 +38,10 @@ public class Order {
     private String note;
 
     @Column(name = "order_date")
-    private LocalDateTime orderDate;
+    private Date orderDate;
+
     @Enumerated(EnumType.STRING)
+    @Column(name = "status")
     private StatusOrder statusOrder;
     @Column(name = "total_money")
     private Integer totalMoney;
@@ -50,23 +53,19 @@ public class Order {
     private String shippingAddress;
 
     @Column(name = "shipping_date")
-    private Date shippingDate;
+    private LocalDate shippingDate;
 
-    @Column(name = "tracking_number")
-    private String trackingNumber;
-
+//    @Column(name = "tracking_number")
+//    private String trackingNumber;
+//
     @Column(name = "payment_method")
     private String paymentMethod;
 
-    @Column(name = "payment_status")
-    private String paymentStatus;
-
-    @Column(name = "payment_date")
-    private Date paymentDate; // Khi người dùng thanh toán
+//    @Column(name = "payment_date")
+//    private Date paymentDate; // Khi người dùng thanh toán
 
     @Column(name = "active")
     private Boolean active; // Thuộc về admin
-
 
 }
 
