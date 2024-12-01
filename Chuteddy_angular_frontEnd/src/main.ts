@@ -11,10 +11,10 @@ import { config } from './app/app.config.server';
 
 
 // const bootstrap = () => bootstrapApplication(HomeComponent, config);
-const bootstrap = () => bootstrapApplication(DetailProductComponent, config);
+// const bootstrap = () => bootstrapApplication(DetailProductComponent, config);
 // const bootstrap = () => bootstrapApplication(OrderComponent, config);
 // const bootstrap = () => bootstrapApplication(OrderConfirmComponent, config);
-// const bootstrap =() =>bootstrapApplication(LoginComponent, config);
+const bootstrap =() =>bootstrapApplication(LoginComponent, config);
 // const bootstrap =() =>bootstrapApplication(RegisterComponent, config);
 // const bootstrap = () => bootstrapApplication(AllProductComponent, config);
 

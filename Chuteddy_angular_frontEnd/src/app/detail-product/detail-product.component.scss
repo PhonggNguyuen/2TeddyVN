@@ -34,12 +34,12 @@ body {
 .thumbnail-section {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
 }
 
 .thumbnail-item img {
-    width: 90px;
-    height: 90px;
+    width: 120px;
+    height: 120px;
     object-fit: cover;
     border-radius: 8px;
     cursor: pointer;
@@ -52,10 +52,26 @@ body {
 }
 
 /* Main Image */
+.main-image-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f8f8f8;
+    border-radius: 12px;
+    padding: 20px;
+    /* Giảm padding để ảnh không bị chật */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* Thêm bóng cho ảnh */
+}
+
 .main-image-section img {
     width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    /* Đảm bảo ảnh không vượt quá chiều rộng container */
+    height: 500px;
+    /* Để chiều cao tự động phù hợp với tỷ lệ ảnh */
+    object-fit: contain;
+    /* Đảm bảo ảnh không bị méo */
+    border-radius: 12px;
 }
 
 /* Product Info */
@@ -66,15 +82,9 @@ body {
 }
 
 .product-title {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: bold;
     color: #000;
-}
-
-.product-description {
-    font-size: 1rem;
-    color: #555;
-    line-height: 1.6;
 }
 
 .product-price {
@@ -84,7 +94,7 @@ body {
 }
 
 .current-price {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     font-weight: bold;
     color: #333;
 }
@@ -110,16 +120,18 @@ body {
 .size-options {
     display: flex;
     gap: 10px;
+    margin-top: 10px;
 }
 
 .size-button {
-    padding: 10px 20px;
+    padding: 8px 15px;
     border: 1px solid #000;
     border-radius: 25px;
     background-color: #fff;
     font-size: 1rem;
     cursor: pointer;
     transition: all 0.3s ease;
+    text-align: center;
 }
 
 .size-button:hover {
@@ -140,8 +152,8 @@ body {
 }
 
 .quantity-btn {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     background-color: #fff;
     border: 1px solid #000;
     border-radius: 50%;
@@ -159,8 +171,8 @@ body {
 }
 
 .quantity-input {
-    width: 50px;
-    height: 40px;
+    width: 40px;
+    height: 30px;
     text-align: center;
     border: 1px solid #000;
     border-radius: 8px;
@@ -224,6 +236,7 @@ body {
         overflow-x: auto;
     }
 }
+
 /* Customer Reviews Section */
 .customer-reviews {
     margin-top: 50px;
@@ -292,3 +305,86 @@ body {
     color: #555;
 }
 
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 50px 0 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #111;
+    letter-spacing: 1px;
+}
+
+/* Product Description Section */
+.product-description {
+    background: #f9f9f9;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    margin-top: 30px;
+}
+
+/* Title of Product Description */
+.product-title {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Introduction Text */
+.intro-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* Description Details Section */
+.description-details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Each Description Item */
+.description-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Heading inside each description item */
+.description-item h4 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+/* List of Sizes */
+.size-list {
+    list-style-type: none;
+    margin-left: 20px;
+    padding-left: 0;
+}
+
+.size-list li {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.size-list li strong {
+    color: #333;
+}
+
+/* Final Note */
+.final-note {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #555;
+    margin-top: 30px;
+}

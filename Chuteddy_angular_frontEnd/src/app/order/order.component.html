@@ -1,84 +1,117 @@
 <app-header></app-header>
-<div class="order-container">
-    <div class="row">
-        <!-- Form thông tin người nhận -->
-        <div class="col-md-6">
-            <h2 class="section-header">Thông tin người nhận</h2>
-            <form>
-                <div class="mb-3">
-                    <label for="name" class="form-label">Họ và tên</label>
-                    <input type="text" class="form-control" id="name" placeholder="Nhập họ và tên">
-                </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" placeholder="Nhập email">
-                </div>
-                <div class="mb-3">
-                    <label for="phone" class="form-label">Số điện thoại</label>
-                    <input type="text" class="form-control" id="phone" placeholder="Nhập số điện thoại">
-                </div>
-            </form>
+<div class="checkout-page">
+    <main class="container">
+        <div class="left-panel">
+            <section class="shipping">
+                <h2>Giao hàng</h2>
+                <form>
+                    <label>
+                        Quốc gia/Vùng
+                        <select>
+                            <option>Việt Nam</option>
+                        </select>
+                    </label>
+                    <label>
+                        Họ
+                        <input type="text" />
+                    </label>
+                    <label>
+                        Tên
+                        <input type="text" />
+                    </label>
+                    <label>
+                        Địa chỉ
+                        <input type="text" />
+                    </label>
+                    <label>
+                        Điện thoại
+                        <input type="text" />
+                    </label>
+                </form>
+            </section>
+
+            <section class="delivery-method">
+                <h2>Phương thức vận chuyển</h2>
+                <label>
+                    <input type="radio" name="delivery" checked />
+                    Giao hàng tiêu chuẩn (35.000đ)
+                </label>
+                <label>
+                    <input type="radio" name="delivery" />
+                    Giao hàng siêu hóa tốc (60.000đ)
+                </label>
+            </section>
+
+            <section class="payment-method">
+                <h2>Thanh toán</h2>
+                <label>
+                    <input type="radio" name="payment" checked />
+                    Thanh toán khi nhận hàng (COD)
+                </label>
+                <label>
+                    <input type="radio" name="payment" />
+                    Thanh toán khi nhận hàng qua ngân hàng
+                </label>
+            </section>
         </div>
 
-        <!-- Bảng danh sách sản phẩm -->
-        <div class="col-md-6">
-            <h2 class="section-header">Danh sách sản phẩm</h2>
-            <table class="order-table">
-                <thead>
-                    <tr>
-                        <th>Sản phẩm</th>
-                        <th>Số lượng</th>
-                        <th>Đơn giá</th>
-                        <th>Tổng giá</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            <div class="product-info">
-                                <img src="https://i.pinimg.com/474x/78/87/16/78871605053a37f371897ab5bda27ac6.jpg" 
-                                     alt="Product Image" class="product-image">
-                                <span class="product-name">Tên sản phẩm</span>
+        <div class="right-panel">
+            <section class="order-summary">
+                <h2>Đơn hàng</h2>
+                <ul>
+                    <li>
+                        <div class="item-detail">
+                            <!-- Hình ảnh sản phẩm -->
+                            <div class="product-image-wrapper">
+                                <img src="https://i.pinimg.com/474x/eb/85/4c/eb854cbea2e988bb751ccd71a9d3fd06.jpg"
+                                    alt="Tên sản phẩm" class="product-image">
                             </div>
-                        </td>
-                        <td>1</td>
-                        <td>$100</td>
-                        <td>$100</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="product-info">
-                                <img src="https://i.pinimg.com/474x/78/87/16/78871605053a37f371897ab5bda27ac6.jpg" 
-                                     alt="Product Image" class="product-image">
-                                <span class="product-name">Tên sản phẩm</span>
+
+                            <!-- Thông tin sản phẩm -->
+                            <div class="item-info-wrapper">
+                                <span class="item-name">Gấu bông dễ thương vãi cả l</span>
+                                <span class="item-info">Kích cỡ: To</span>
+                                <span class="item-quantity">Số lượng: 1</span>
+                                <span class="item-price">386.400₫</span>
                             </div>
-                        </td>
-                        <td>1</td>
-                        <td>$100</td>
-                        <td>$100</td>
-                    </tr>
-                </tbody>
-            </table>
+                        </div>
+                    </li>
 
-            <!-- Tổng giá -->
-            <div class="summary-total">
-                Tổng giá: <span class="total-value">$200</span>
-            </div>
+                    <li>
+                        <div class="item-detail">
+                            <!-- Hình ảnh sản phẩm -->
+                            <div class="product-image-wrapper">
+                                <img src="https://i.pinimg.com/474x/eb/85/4c/eb854cbea2e988bb751ccd71a9d3fd06.jpg"
+                                    alt="Tên sản phẩm" class="product-image">
+                            </div>
 
-            <!-- Nhập voucher -->
-            <div class="voucher-section">
-                <h4 class="section-header">Nhập voucher</h4>
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Nhập mã giảm giá">
-                    <button class="btn btn-gradient">Áp dụng</button>
+                            <!-- Thông tin sản phẩm -->
+                            <div class="item-info-wrapper">
+                                <span class="item-name">Gấu bông dễ thương vãi cả l</span>
+                                <span class="item-info">Kích cỡ: To</span>
+                                <span class="item-quantity">Số lượng: 1</span>
+                                <span class="item-price">386.400₫</span>
+                            </div>
+                        </div>
+                    </li>
+                 
+
+                </ul>
+                <div class="discount-section">
+                    <div class="discount-input-wrapper">
+                        <input type="text" class="discount-input" placeholder="Nhập mã giảm giá" />
+                        <button class="btn-apply">Áp dụng</button>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Nút đặt hàng -->
-            <div class="submit-order">
-                <button class="btn btn-gradient btn-submit-order">Đặt hàng</button>
-            </div>
+                <p>Giảm giá: <span>-20.000₫</span></p>
+                <p>Vận chuyển: <span>35.000₫</span></p>
+                <p><strong>Tổng: 971.800₫</strong></p>
+            </section>
+
+            <button class="complete-order">Hoàn tất đơn hàng</button>
         </div>
-    </div>
+
+    </main>
 </div>
 <app-footer></app-footer>
