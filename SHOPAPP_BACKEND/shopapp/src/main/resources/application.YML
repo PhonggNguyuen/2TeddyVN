@@ -2,10 +2,10 @@ server:
   port: 8088
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3307/shopapp?useSSL=false&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/shopapp?useSSL=false&serverTimezone=UTC
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
-    password:
+    password: Az@123321456
   jpa:
     show-sql: true
     hibernate:

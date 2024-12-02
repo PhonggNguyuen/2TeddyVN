@@ -7,6 +7,9 @@ import lombok.*;
 @Table(name = "products")
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
+@Setter
+@Getter
 public class Product extends UtilsEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

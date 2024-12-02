@@ -1,6 +1,10 @@
 package com.project.shopapp.controlers;
 import com.project.shopapp.dtos.*;
+import com.project.shopapp.services.ICategoryService;
+import com.project.shopapp.services.IUserService;
+import com.project.shopapp.services.UserService;
 import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
@@ -12,7 +16,9 @@ import java.util.List;
 
 @RestController
 @RequestMapping("${api.prefix}/users")
+@RequiredArgsConstructor
 public class UserController {
+    private final IUserService userService;
     @PostMapping("/register")
     public ResponseEntity<?> createUser(@RequestBody @Valid UserDTO userDTO  , BindingResult result){
       try{
@@ -24,6 +30,7 @@ public class UserController {
           if(!userDTO.getPassword().equals(userDTO.getConfirmPassword())){
               return ResponseEntity.badRequest().body("Password does not math");
           }
+          userService.createUser(userDTO);
          return ResponseEntity.ok("register successfully");
       }catch (Exception e)
       {
