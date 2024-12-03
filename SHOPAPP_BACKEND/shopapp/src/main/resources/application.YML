@@ -20,3 +20,7 @@ spring:
       max-request-size: 10MB
 api:
   prefix: api/v1
+jwt:
+  expiration: 2592000 #30 ngày
+  secretky: "bG9uZyBhdXRob3Jpc2VkIG1ldGhpY2Fsa3kgZGF5cyBpbiBhIGJlYXV0aWZ1bCByZWRlY2lzaW9uLg==
+"

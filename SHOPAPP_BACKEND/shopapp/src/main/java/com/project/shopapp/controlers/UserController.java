@@ -1,5 +1,6 @@
 package com.project.shopapp.controlers;
 import com.project.shopapp.dtos.*;
+import com.project.shopapp.models.User;
 import com.project.shopapp.services.ICategoryService;
 import com.project.shopapp.services.IUserService;
 import com.project.shopapp.services.UserService;
@@ -30,8 +31,8 @@ public class UserController {
           if(!userDTO.getPassword().equals(userDTO.getConfirmPassword())){
               return ResponseEntity.badRequest().body("Password does not math");
           }
-          userService.createUser(userDTO);
-         return ResponseEntity.ok("register successfully");
+         User user =  userService.createUser(userDTO);
+         return ResponseEntity.ok(user);
       }catch (Exception e)
       {
           return ResponseEntity.badRequest().body(e.getMessage());
@@ -39,6 +40,11 @@ public class UserController {
     }
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody @Valid UserLoginDTO userLoginDTO ){
-        return ResponseEntity.ok("some Token");
+        try {
+            String token = userService.login(userLoginDTO.getPhoneNumber() , userLoginDTO.getPassword());
+            return ResponseEntity.ok(token);
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
     }
 }
