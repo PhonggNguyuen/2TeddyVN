@@ -3,10 +3,10 @@ import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
-  standalone: true, // Đảm bảo HomeComponent cũng là standalone
+  selector: 'app-detail-product',
+  templateUrl: './detail-product.component.html',
+  styleUrls: ['./detail-product.component.scss'],
+  standalone: true, 
   imports: [HeaderComponent, FooterComponent] // Import các component ở đây
 })
-export class HomeComponent {}
+export class DetailProductComponent {}

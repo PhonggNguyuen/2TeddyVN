@@ -1,0 +1,238 @@
+/* Tổng quan */
+.checkout-page {
+    background-color: #f9f9f9; /* Nền trang */
+    padding: 50px 0;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Container chính */
+.container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Left Panel - Thông tin người nhận */
+.left-panel {
+    flex: 0 0 60%;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Tiêu đề trong Left Panel */
+.left-panel h2 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #333;
+    border-bottom: 2px solid #000;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Form trong Left Panel */
+.left-panel form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Tạo khoảng cách đều giữa các input */
+}
+
+/* Label */
+.left-panel label {
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+}
+
+/* Các ô input và select */
+.left-panel input[type="text"],
+.left-panel select {
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 100%; /* Chiếm hết chiều rộng */
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease-in-out;
+}
+
+/* Hiệu ứng khi focus vào input */
+.left-panel input[type="text"]:focus,
+.left-panel select:focus {
+    border-color: #000;
+    outline: none;
+}
+
+/* Phương thức vận chuyển và thanh toán */
+.left-panel .delivery-method,
+.left-panel .payment-method {
+    margin-top: 30px;
+}
+
+.left-panel .delivery-method label,
+.left-panel .payment-method label {
+    display: block;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.left-panel input[type="radio"] {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+/* Right Panel */
+.right-panel {
+    flex: 0 0 40%;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: auto;
+}
+
+/* Tiêu đề trong Right Panel */
+.right-panel h2 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #333;
+    border-bottom: 2px solid #000;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Chi tiết đơn hàng */
+.item-detail {
+    display: flex; /* Căn giữa hình ảnh và thông tin theo chiều ngang */
+    align-items: center; /* Căn chỉnh các phần tử theo chiều dọc */
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Hình ảnh sản phẩm */
+.product-image-wrapper {
+    width: 80px;
+    height: 80px;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Thông tin sản phẩm */
+.item-info-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Tên sản phẩm */
+.item-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Thông tin sản phẩm */
+.item-info {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Số lượng */
+.item-quantity {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Giá sản phẩm */
+.item-price {
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+}
+
+/* Phần giảm giá */
+.discount-section {
+    margin-top: 20px;
+}
+
+.discount-input-wrapper {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.discount-input {
+    flex: 1;
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.discount-input:focus {
+    border-color: #000;
+    outline: none;
+}
+
+.btn-apply {
+    padding: 12px 20px;
+    font-size: 14px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn-apply:hover {
+    background-color: #444;
+}
+
+/* Tổng tiền */
+.right-panel p {
+    font-size: 16px;
+    color: #333;
+}
+
+.right-panel strong {
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+}
+
+/* Button hoàn tất đơn hàng */
+.complete-order {
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    margin-top: 20px;
+}
+
+.complete-order:hover {
+    background-color: #444;
+}

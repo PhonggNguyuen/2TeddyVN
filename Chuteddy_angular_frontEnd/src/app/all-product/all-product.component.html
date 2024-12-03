@@ -1,0 +1,114 @@
+<app-header></app-header>
+<div class="all-products-container">
+    <aside class="filter-section">
+        <h2 class="filter-title">Bộ Lọc Sản Phẩm</h2>
+        <div class="filter-card">
+            <h4><i class="fa-solid fa-list"></i> Danh Mục</h4>
+            <label><input type="checkbox" name="category" value="teddy" /> Gấu Teddy</label>
+            <label><input type="checkbox" name="category" value="pillow" /> Gối ôm</label>
+            <label><input type="checkbox" name="category" value="keychain" /> Móc khóa</label>
+        </div>
+        <div class="filter-card">
+            <h4><i class="fa-solid fa-tags"></i> Giá</h4>
+            <label><input type="checkbox" name="price" value="under-100k" /> Dưới 100.000₫</label>
+            <label><input type="checkbox" name="price" value="100k-300k" /> 100.000₫ - 300.000₫</label>
+            <label><input type="checkbox" name="price" value="300k-600k" /> 300.000₫ - 600.000₫</label>
+            <label><input type="checkbox" name="price" value="600k-1m" /> 600.000₫ - 1.000.000₫</label>
+        </div>
+        <div class="filter-card">
+            <h4><i class="fa-solid fa-palette"></i> Màu Sắc</h4>
+            <label><input type="checkbox" name="color" value="brown" /> Nâu</label>
+            <label><input type="checkbox" name="color" value="white" /> Trắng</label>
+            <label><input type="checkbox" name="color" value="pink" /> Hồng</label>
+        </div>
+        <div class="filter-card">
+            <h4><i class="fa-solid fa-ruler"></i> Kích Thước</h4>
+            <label><input type="checkbox" name="size" value="small" /> Nhỏ</label>
+            <label><input type="checkbox" name="size" value="medium" /> Vừa</label>
+            <label><input type="checkbox" name="size" value="large" /> Lớn</label>
+            <label><input type="checkbox" name="size" value="giant" /> Khổng Lồ</label>
+        </div>
+        <button class="apply-filter-btn">Áp Dụng</button>
+    </aside>
+    <main class="product-list-section">
+        <header class="product-header">
+            <h2>Tất Cả Sản Phẩm</h2>
+            <div class="sort-options">
+                <label for="sort-select">Sắp xếp theo:</label>
+                <select id="sort-select">
+                    <option value="popularity">Phổ biến</option>
+                    <option value="price-asc">Giá tăng dần</option>
+                    <option value="price-desc">Giá giảm dần</option>
+                </select>
+            </div>
+        </header>
+        <div class="product-grid">
+            <!-- Sản phẩm 1 -->
+            <div class="product-item">
+                <img src="https://i.pinimg.com/474x/eb/85/4c/eb854cbea2e988bb751ccd71a9d3fd06.jpg" alt="GauBongTeedy"
+                    class="product-image" />
+                <h3 class="product-name">Tên sản phẩm</h3>
+                <div class="product-rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                </div>
+                <div class="product-price">420.000 VNĐ</div>
+            </div>
+
+            <!-- Sản phẩm 2 -->
+            <div class="product-item">
+                <img src="https://i.pinimg.com/474x/eb/85/4c/eb854cbea2e988bb751ccd71a9d3fd06.jpg" alt="GauBongTeddy"
+                    class="product-image" />
+                <h3 class="product-name">Tên sản phẩm</h3>
+                <div class="product-rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                </div>
+                <div class="product-price">420.000 VNĐ</div>
+            </div>
+
+            <!-- Sản phẩm 3 -->
+            <div class="product-item">
+                <img src="https://i.pinimg.com/474x/eb/85/4c/eb854cbea2e988bb751ccd71a9d3fd06.jpg" alt="GauBongTeddy"
+                    class="product-image" />
+                <h3 class="product-name">Tên sản phẩm</h3>
+                <div class="product-rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                </div>
+                <div class="product-price">420.000 VNĐ</div>
+            </div>
+            <!-- Sản phẩm 4 -->
+            <div class="product-item">
+                <img src="https://i.pinimg.com/474x/eb/85/4c/eb854cbea2e988bb751ccd71a9d3fd06.jpg" alt="GauBongTeddy"
+                    class="product-image" />
+                <h3 class="product-name">Tên sản phẩm</h3>
+                <div class="product-rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                </div>
+                <div class="product-price">420.000 VNĐ</div>
+            </div>
+        </div>
+
+        <div class="pagination">
+            <button class="pagination-btn active">1</button>
+            <button class="pagination-btn">2</button>
+            <button class="pagination-btn">3</button>
+            <button class="pagination-btn">...</button>
+        </div>
+    </main>
+</div>
+<app-footer></app-footer>
