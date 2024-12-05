@@ -14,9 +14,9 @@ import { config } from './app/app.config.server';
 // const bootstrap = () => bootstrapApplication(DetailProductComponent, config);
 // const bootstrap = () => bootstrapApplication(OrderComponent, config);
 // const bootstrap = () => bootstrapApplication(OrderConfirmComponent, config);
-const bootstrap =() =>bootstrapApplication(LoginComponent, config);
-// const bootstrap =() =>bootstrapApplication(RegisterComponent, config);
+// const bootstrap =() =>bootstrapApplication(LoginComponent, config);
+bootstrapApplication(RegisterComponent).catch((err) => console.error(err));
 // const bootstrap = () => bootstrapApplication(AllProductComponent, config);
 
 
-export default bootstrap;
+

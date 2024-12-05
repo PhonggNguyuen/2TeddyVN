@@ -1,51 +1,60 @@
-<div class="register-container">
+<div class="container-fluid register-container">
+  <div class="row no-gutters">
     <!-- Phần hình ảnh bên trái -->
-    <div class="register-image"></div>
-  
+    <div class="col-md-6 d-flex align-items-center justify-content-center register-image"
+      style="background: url('https://i.pinimg.com/474x/ea/85/13/ea8513333ec5fb8d2dcdcb6114c9e70d.jpg') center/cover no-repeat; height: 100vh;">
+      <!-- Bạn có thể thêm hình ảnh vào đây -->
+    </div>
+
     <!-- Phần form đăng ký bên phải -->
-    <div class="register-form">
-      <h2 class="title">Tạo tài khoản mới</h2>
-      <p class="description">Vui lòng nhập thông tin tại đây</p>
-  
-      <form>
-        <div class="form-group">
-          <label for="lastName">Họ</label>
-          <input type="text" id="lastName" class="form-control" placeholder="Họ" />
-        </div>
-  
-        <div class="form-group">
-          <label for="firstName">Tên</label>
-          <input type="text" id="firstName" class="form-control" placeholder="Tên" />
-        </div>
-  
-        <div class="form-group">
-          <label for="address">Địa chỉ</label>
-          <input type="text" id="address" class="form-control"" placeholder="Địa chỉ" />
-        </div>
-  
-        <div class="form-group">
-          <label for="phone">Số điện thoại</label>
-          <input type="text" id="phone" class="form-control" placeholder="Số điện thoại" />
-        </div>
-        <div class="form-group">
-          <label for="password">Mật khẩu</label>
-          <input type="password" id="password" class="form-control" placeholder="Mật khẩu"
-            [(ngMOdel)] ="phone" 
-            (input) = "onPhoneChange" />
-        </div>
-  
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" class="form-control" placeholder="Email" />
-        </div>
-  
-        <div class="form-check">
-          <input type="checkbox" id="terms" class="form-check-input" />
-          <label for="terms" class="form-check-label">Tôi đồng ý với Điều khoản & Điều kiện</label>
-        </div>
-  
-        <button type="submit" class="btn btn-primary w-100">Đăng ký</button>
-      </form>
+    <div class="col-md-6 d-flex align-items-center justify-content-center mt-3 register-form" style="height: 90vh;">
+      <div class="w-100">
+        <h2 class="title text-center">Tạo tài khoản mới</h2>
+        <p class="description text-center">Vui lòng nhập thông tin tại đây</p>
+
+        <form>
+          <div class="form-group">
+            <label for="lastName">Họ</label>
+            <input type="text" id="lastName" class="form-control" 
+            [(ngModel)]="lastName" name="lastName"/>
+          </div>
+          
+          <div class="form-group">
+            <label for="firstName">Tên</label>
+            <input type="text" id="firstName" class="form-control" 
+            [(ngModel)]="firstName" name="firstName"/>
+          </div>
+          
+
+          <div class="form-group">
+            <label for="phone">Số điện thoại</label>
+            <input type="text" name="phone" id="phone" class="form-control" [(ngModel)]="phone"
+              (input)="onPhoneChange()" />
+          </div>
+
+          <div class="form-group">
+            <label for="password">Mật khẩu</label>
+            <input type="password" id="password" class="form-control" [(ngModel)]="password" name="password" />
+
+          </div>
+          <div class="form-group">
+            <label for="retype-password">Nhập lại mật khẩu</label>
+            <input type="password" id="retype-password" class="form-control" 
+            [(ngModel)]="retypePassword" name="retypePassword"/>
+         </div>
+         
+
+
+          <div class="form-check">
+            <input type="checkbox" id="agree" class="form-check-input"  [(ngModel)]="isAccepted" name="isAccepted" />
+            <label for="agree" class="form-check-label">Tôi đồng ý với Điều khoản & Điều kiện</label>
+          </div>
+
+          <button type="submit" 
+          (click)="register()"
+          class="btn btn-primary w-100 mt-3">Đăng ký</button>
+        </form>
+      </div>
     </div>
   </div>
-  
+</div>
