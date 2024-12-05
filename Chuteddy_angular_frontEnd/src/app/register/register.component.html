@@ -3,56 +3,79 @@
     <!-- Phần hình ảnh bên trái -->
     <div class="col-md-6 d-flex align-items-center justify-content-center register-image"
       style="background: url('https://i.pinimg.com/474x/ea/85/13/ea8513333ec5fb8d2dcdcb6114c9e70d.jpg') center/cover no-repeat; height: 100vh;">
-      <!-- Bạn có thể thêm hình ảnh vào đây -->
     </div>
 
     <!-- Phần form đăng ký bên phải -->
-    <div class="col-md-6 d-flex align-items-center justify-content-center mt-3 register-form" style="height: 90vh;">
-      <div class="w-100">
-        <h2 class="title text-center">Tạo tài khoản mới</h2>
-        <p class="description text-center">Vui lòng nhập thông tin tại đây</p>
+    <div class="col-md-6 d-flex align-items-center justify-content-center register-form">
+      <div class="form-container">
+        <form #registerForm="ngForm">
+          <h2 class="title text-center">Tạo tài khoản mới</h2>
+          <p class="description text-center">Vui lòng nhập thông tin tại đây</p>
 
-        <form>
+          <!-- Họ và tên -->
           <div class="form-group">
-            <label for="lastName">Họ</label>
-            <input type="text" id="lastName" class="form-control" 
-            [(ngModel)]="lastName" name="lastName"/>
+            <label for="fullName">Họ và Tên</label>
+            <input type="text" id="fullName" class="form-control" [(ngModel)]="fullName" name="fullName" required />
           </div>
-          
-          <div class="form-group">
-            <label for="firstName">Tên</label>
-            <input type="text" id="firstName" class="form-control" 
-            [(ngModel)]="firstName" name="firstName"/>
-          </div>
-          
 
+          <!-- Ngày sinh -->
+          <div class="form-group">
+            <label for="dateOfBirth">Ngày sinh</label>
+            <input type="date" id="dateOfBirth" class="form-control" [(ngModel)]="dateOfBirth" name="dateOfBirth" required (blur)="checkAge()" />
+            <p class="text-danger" *ngIf="registerForm.form.controls['dateOfBirth']?.hasError('invalidAge') && registerForm?.form?.touched">
+              Ngày sinh không hợp lệ! 
+            </p>
+          </div>
+
+          <!-- Số điện thoại -->
           <div class="form-group">
             <label for="phone">Số điện thoại</label>
-            <input type="text" name="phone" id="phone" class="form-control" [(ngModel)]="phone"
-              (input)="onPhoneChange()" />
+            <input 
+              type="text" 
+              name="phone" 
+              id="phone" 
+              class="form-control"
+              [(ngModel)]="phone" 
+              (input)="onPhoneChange()" 
+              required />
+            <p class="text-danger" *ngIf="(!isPhoneValid()) && registerForm?.form?.touched">
+              Số điện thoại phải gồm 10 chữ số hợp lệ!
+            </p>
           </div>
+          
 
+          <!-- Mật khẩu -->
           <div class="form-group">
             <label for="password">Mật khẩu</label>
-            <input type="password" id="password" class="form-control" [(ngModel)]="password" name="password" />
-
+            <input type="password" id="password" class="form-control" [(ngModel)]="password" name="password" required placeholder="Ít nhất 6 kí tự" />
+            <p class="text-danger" *ngIf="password.length < 6 && registerForm?.form?.touched">Mật khẩu phải ít nhất 6 kí tự!</p>
           </div>
+
+          <!-- Nhập lại mật khẩu -->
           <div class="form-group">
             <label for="retype-password">Nhập lại mật khẩu</label>
-            <input type="password" id="retype-password" class="form-control" 
-            [(ngModel)]="retypePassword" name="retypePassword"/>
-         </div>
-         
+            <input type="password" id="retype-password" class="form-control" [(ngModel)]="retypePassword" name="retypePassword" (input)="checkPasswordsMatch()" required />
+            <p class="text-danger" *ngIf="registerForm.form.controls['retypePassword']?.hasError('passwordMismatch') && registerForm?.form?.touched">
+              Mật khẩu không khớp!
+            </p>
+          </div>
 
+          <!-- Địa chỉ -->
+          <div class="form-group">
+            <label for="address">Địa chỉ</label>
+            <input type="text" id="address" class="form-control" [(ngModel)]="address" name="address" required />
+          </div>
 
+          <!-- Điều khoản -->
           <div class="form-check">
-            <input type="checkbox" id="agree" class="form-check-input"  [(ngModel)]="isAccepted" name="isAccepted" />
+            <input type="checkbox" id="agree" class="form-check-input" [(ngModel)]="isAccepted" name="isAccepted" required />
             <label for="agree" class="form-check-label">Tôi đồng ý với Điều khoản & Điều kiện</label>
           </div>
 
-          <button type="submit" 
-          (click)="register()"
-          class="btn btn-primary w-100 mt-3">Đăng ký</button>
+          <!-- Nút Đăng ký -->
+          <button type="submit"  (click)="register()" class="btn btn-primary w-100 mt-3">
+            Đăng ký
+          </button>
         </form>
       </div>
     </div>
